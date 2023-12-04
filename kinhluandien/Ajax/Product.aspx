@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Product.aspx.cs" Inherits="kinhluandien_Ajax_Product" %>
