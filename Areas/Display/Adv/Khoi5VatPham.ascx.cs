@@ -32,7 +32,8 @@ public partial class Areas_Display_Adv_Khoi5VatPham : System.Web.UI.UserControl
             AdvertistmentsColumns.IaTarget,
             AdvertistmentsColumns.VaParam,
             AdvertistmentPositionsColumns.VapName,
-            AdvertistmentPositionsColumns.VapDescription
+            AdvertistmentPositionsColumns.VapDescription,
+			AdvertistmentPositionsColumns.VapImage
         );
         var condition = DataExtension.AndConditon(
             AdvertistmentPositionsTSql.GetByPosition(pos),
@@ -44,7 +45,7 @@ public partial class Areas_Display_Adv_Khoi5VatPham : System.Web.UI.UserControl
         if (dt.Rows.Count <= 0) return s.ToString();
         s.Append("<div class='kinh_container5-title kinh_title'>" +
                  "<div class='kinh_container5-title-top kinh_title-top'>" +
-                 dt.Rows[0][AdvertistmentPositionsColumns.VapName] + "</div>" +
+                 dt.Rows[0][AdvertistmentPositionsColumns.VapDescription] + "</div>" +
                  "<div class='line_title'></div>" +
                  "</div>");
         s.Append("<div class='kinh_container5-box'>" +
@@ -63,7 +64,7 @@ public partial class Areas_Display_Adv_Khoi5VatPham : System.Web.UI.UserControl
             s.Append("<div class='kinh_container5-right'>" +
                      " <div class='bg_1'></div>" +
                      "<div class='bg_2'>" +
-                     ImagesExtension.GetImage(_pic, image,
+                     ImagesExtension.GetImage(_pic, dt.Rows[0][AdvertistmentPositionsColumns.VapImage].ToString(),
                          titleItem, cssClass, false, false, "") +
                      "</div>" +
                      "</div>");

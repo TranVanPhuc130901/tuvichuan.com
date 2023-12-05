@@ -103,43 +103,43 @@ public partial class kinhluandien_Ajax_Product : System.Web.UI.Page
 
         //        #region Gửi email thông báo đến email hệ thống
 
-        //        var dateCreate = DateTime.Now.ToString(CultureInfo.InvariantCulture);
-        //        var subject = "Ngày gửi" + " - " + dateCreate;
-        //        var body = @"
-        //<div style='width: 100%;margin: auto; font-family: Arial'>
-        //    <table style='width: 100%; border-spacing: 0;border-collapse: collapse;border-right:1px solid'>
-        //        <tbody>
-        //            <tr>
-        //                <td style='padding: 10px; width: 25%;border: 1px solid #d2d2d2'> Họ và tên </td>
-        //                <td style='padding: 10px; width: 75%;border: 1px solid #d2d2d2'>" + name + @"</td>
-        //            </tr>
-        //            <tr>
-        //                <td style='padding: 10px; width: 25%;border: 1px solid #d2d2d2'>Số điện thoại</td>
-        //                <td style='padding: 10px; width: 75%;border: 1px solid #d2d2d2'>" + phone + @"</td>
-        //            </tr>
-        //            <tr>
-        //                <td style='padding: 10px; width: 25%;border: 1px solid #d2d2d2'>Ngày sinh</td>
-        //                <td style='padding: 10px; width: 75%;border: 1px solid #d2d2d2'>" + date + @"</td>
-        //            </tr>
-        //            <tr>
-        //                <td style='padding: 10px; width: 25%;border: 1px solid #d2d2d2'>Địa chỉ</td>
-        //                <td style='padding: 10px; width: 75%;border: 1px solid #d2d2d2'>" + address + @"</td>
-        //            </tr>
-        //        </tbody>
-        //    </table>
-        //</div>";
-        //        var bodyCustomer = SettingsExtension.GetSettingKey("txt_Email_Popup", _lang);
-        //        EmailExtension.SendEmail(email, subject, bodyCustomer + body);
-        //        var emailManager = SettingsExtension.GetSettingKey(SettingsExtension.KeyEmailManager, _lang);
-        //        var emailReceived = "";
-        //        var emailCc = new List<string>();
-        //        for (var i = 0; i < emailManager.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries).Length; i++)
-        //        {
-        //            var item = emailManager.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries)[i];
-        //            if (i == 0) emailReceived = item;
-        //            else emailCc.Add(item);
-        //        }
-        //        EmailExtension.SendEmail(emailReceived, subject, body + _source, emailCc.ToArray());
+         var dateCreate = DateTime.Now.ToString(CultureInfo.InvariantCulture);
+               var subject = "Ngày gửi" + " - " + dateCreate;
+                var body = @"
+        <div style='width: 100%;margin: auto; font-family: Arial'>
+            <table style='width: 100%; border-spacing: 0;border-collapse: collapse;border-right:1px solid'>
+               <tbody>
+                   <tr>
+                       <td style='padding: 10px; width: 25%;border: 1px solid #d2d2d2'> Họ và tên </td>
+                    <td style='padding: 10px; width: 75%;border: 1px solid #d2d2d2'>" + name + @"</td>
+               </tr>
+               <tr>
+                  <td style='padding: 10px; width: 25%;border: 1px solid #d2d2d2'>Số điện thoại</td>
+              <td style='padding: 10px; width: 75%;border: 1px solid #d2d2d2'>" + phone + @"</td>
+               </tr>
+             <tr>
+                    <td style='padding: 10px; width: 25%;border: 1px solid #d2d2d2'>Ngày sinh</td>
+                       <td style='padding: 10px; width: 75%;border: 1px solid #d2d2d2'>" + date + @"</td>
+                 </tr>
+                 <tr>
+                      <td style='padding: 10px; width: 25%;border: 1px solid #d2d2d2'>Địa chỉ</td>
+                       <td style='padding: 10px; width: 75%;border: 1px solid #d2d2d2'>" + address + @"</td>
+            </tr>
+                </tbody>
+          </table>
+        </div>";
+               var bodyCustomer = SettingsExtension.GetSettingKey("txt_Email_Popup", _lang);
+              // EmailExtension.SendEmail(email, subject, bodyCustomer + body);
+                var emailManager = SettingsExtension.GetSettingKey(SettingsExtension.KeyEmailManager, _lang);
+              var emailReceived = "";
+               var emailCc = new List<string>();
+               for (var i = 0; i < emailManager.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries).Length; i++)
+               {
+                 var item = emailManager.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries)[i];
+                 if (i == 0) emailReceived = item;
+                 else emailCc.Add(item);
+              }
+               EmailExtension.SendEmail(emailReceived, subject, body + _source, emailCc.ToArray());
 
         //#endregion Gửi email thông báo đến email hệ thống
         string[] reply = { s };

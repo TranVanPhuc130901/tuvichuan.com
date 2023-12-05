@@ -44,7 +44,7 @@ public partial class Areas_Display_Adv_Khoi7VatPham : System.Web.UI.UserControl
         if (dt.Rows.Count <= 0) return s.ToString();
         s.Append("<div class='kinh_container7-title kinh_title'>" +
                  "<div class='kinh_container7-title-top kinh_title-top'>" +
-                 dt.Rows[0][AdvertistmentPositionsColumns.VapName] + "</div>" +
+                 dt.Rows[0][AdvertistmentPositionsColumns.VapDescription] + "</div>" +
                  "<div class='line_title'></div>" +
                  "</div>");
         s.Append("<div class='kinh_container7-box'>" +

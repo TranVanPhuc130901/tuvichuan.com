@@ -43,8 +43,8 @@ public partial class Areas_Display_Adv_AdvUser : System.Web.UI.UserControl
             AdvertistmentsTSql.GetByStatus("1")
             );
         var dt = Advertistments.GetAllData("", fields, condition, AdvertistmentsColumns.IaSortOrder);
+		if (dt.Rows.Count <= 0) return s.ToString();
         s.Append("<div class='box_user-feedback'>");
-        if (dt.Rows.Count <= 0) return s.ToString();
         for (var i = 0; i < dt.Rows.Count; i++)
         {
             var titleItem = dt.Rows[i][AdvertistmentsColumns.VaTitle].ToString();

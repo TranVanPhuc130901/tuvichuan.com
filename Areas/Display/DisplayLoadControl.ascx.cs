@@ -13,6 +13,7 @@ public partial class Areas_Display_DisplayLoadControl : System.Web.UI.UserContro
         else if (_rewrite == RewriteExtension.Product) plLoadControl.Controls.Add(LoadControl("Product/Control/LoadControl.ascx"));
         else if (_rewrite == RewriteExtension.News) plLoadControl.Controls.Add(LoadControl("News/Control/LoadControl.ascx"));
         else if (_rewrite == RewriteExtension.Contact) plLoadControl.Controls.Add(LoadControl("Contact/Control/LoadControl.ascx"));
+		 else if (_rewrite == RewriteExtension.Project) plLoadControl.Controls.Add(LoadControl("Product/Control/LoadControl.ascx"));
         else if (_rewrite == RewriteExtension.Search) plLoadControl.Controls.Add(LoadControl("Search/Control/LoadControl.ascx"));
         else if (_rewrite == RewriteExtension.Error) plLoadControl.Controls.Add(LoadControl("Error/Control/LoadControl.ascx"));
         else plLoadControl.Controls.Add(LoadControl("Home/Control/LoadControl.ascx"));

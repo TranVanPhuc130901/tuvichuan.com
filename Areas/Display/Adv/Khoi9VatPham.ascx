@@ -51,7 +51,6 @@
                  <div class="bg_1"></div>
                  <div class="bg_2">
                      <asp:Literal runat="server" ID="ltrImageSec9"></asp:Literal>
-                     <img src="/kinhluandien/img/rua.jpg"/>
                  </div>
                  <div class="bg_3"></div>
                  <div class="bg_4"></div>

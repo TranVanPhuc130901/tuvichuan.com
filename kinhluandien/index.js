@@ -166,16 +166,44 @@ function submitForm(event) {
         },
         success: function (res) {
             if (res[0] === "success") {
-                alert(res[1]);
+                location.href = "/success.aspx";
             } else {
-                alert(res[1]);
+                thongBao(3000, "Đặt hàng thất bại")
             }
             //ResetAllTextBox("#contact");
             //thongBao(3000, "successful.");
         },
         error: function () {
             //thongBao(3000, "The system is busy. Please try again later.");
-            alert("loi");
+            thongBao(3000, "Đặt hàng thất bại")
         }
     });
+}
+
+function thongBao(miliSecondDelay, contentPopup) {
+    taoThongBao();
+    $("#divNoiDungThongBao").html(contentPopup);
+    miliSecondDelay = parseInt(miliSecondDelay) / 1000;
+    var int = self.setInterval(
+        function () {
+            miliSecondDelay--;
+            if (miliSecondDelay < 0) {
+                window.clearInterval(int);
+                huyThongBao();
+            }
+        }, 1000);
+}
+
+function taoThongBao() {
+    var textForm = "<div id='divThongBao'><div id='divKhungThongBao'><div id='divNoiDungThongBao'><!----></div></div></div>";
+    $("body").append(textForm);
+    $("#divThongBao").attr("style", "background:#daf2e4;position:fixed;_position:absolute;top:10px;right:10px;z-index:9999;display:none;width:250px;max-width:calc(100% - 20px)");
+    $("#divKhungThongBao").attr("style", "position:relative;padding:15px");
+    $("#divNoiDungThongBao").attr("style", "color:#61c257");
+    $("#divThongBao").show();
+}
+
+function huyThongBao() {
+    $("#divThongBao").hide();
+    $("#divThongBao").remove();
 }

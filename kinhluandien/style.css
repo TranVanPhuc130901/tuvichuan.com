@@ -604,7 +604,7 @@ a{text-decoration: none;}
 .bg_2 {
     background: url(./img/sp1.png) no-repeat;
     height: 400px;
-    width: 220px;
+    /*width: 220px;*/
     position: absolute;
     top: 50%;
     left: 50%;

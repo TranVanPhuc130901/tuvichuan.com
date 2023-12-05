@@ -31,7 +31,7 @@ public partial class Areas_Admin_Control_Component_ContactNewest : System.Web.UI
             s.Append("<div class=\"cot1 text-center\"><input class='cursor-pointer' id='cb-" + id + "' name='tick' type='checkbox' value='" + id + "' /></div>");
             s.Append("<div class=\"cot2\">");
             s.Append("<b>Họ tên</b>: " + dt.Rows[i]["vcdName"] + "<br/>");
-            s.Append("<b>Email</b>: " + dt.Rows[i]["vcdEmail"] + "<br/>");
+            s.Append("<b>Ngày sinh</b>: " + dt.Rows[i]["vcdContent"] + "<br/>");
             s.Append("<b>Điện thoại</b>: " + dt.Rows[i]["vcdPhone"] + "<br/>");
             s.Append("<b>Địa chỉ</b>: " + dt.Rows[i]["vcdAddress"] + "<br/>");
             s.Append("</div>");

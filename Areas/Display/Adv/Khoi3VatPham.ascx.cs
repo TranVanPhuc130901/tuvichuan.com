@@ -37,8 +37,7 @@ public partial class Areas_Display_Adv_Khoi3VatPham : System.Web.UI.UserControl
         var condition = DataExtension.AndConditon(
             AdvertistmentPositionsTSql.GetByPosition(pos),
             AdvertistmentPositionsTSql.GetByStatus("1"),
-            AdvertistmentPositionsTSql.GetByLang(_lang),
-            AdvertistmentsTSql.GetByStatus("1")
+            AdvertistmentPositionsTSql.GetByLang(_lang)
             );
         var dt = Advertistments.GetAllData("", fields, condition, AdvertistmentsColumns.IaSortOrder);
         if (dt.Rows.Count <= 0) return;

@@ -41,14 +41,12 @@
                             </asp:DropDownList>
                         </div>
                     </div>
-                     <fieldset>
-                    <legend>Mô tả</legend>
                     <div class="form-group">
-                        <div class="col-md-12">
-                            <asp:TextBox runat="server" ID="txtDesc" Height="150"  CssClass="form-control"></asp:TextBox>
+                        <label class="control-label col-md-2">Mô tả</label>
+                        <div class="col-md-10">
+                            <asp:TextBox runat="server" ID="txtDesc" TextMode="MultiLine" Height="150" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
-                </fieldset>
                     <uc1:UploadImage runat="server" id="UploadImage" />
                     <div class="form-group">
                         <label class="control-label col-md-2">Ngày đăng</label>

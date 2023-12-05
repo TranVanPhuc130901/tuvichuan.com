@@ -32,7 +32,7 @@
                     <div class="form-group count-this">
                         <label class="control-label col-md-2">Mô tả <span></span></label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="txtDesc" TextMode="MultiLine" CssClass="form-control" Rows="3"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtDesc" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
                     <uc1:UploadImage runat="server" id="UploadImage" />

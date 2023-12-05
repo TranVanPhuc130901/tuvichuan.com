@@ -18,9 +18,9 @@
         name="viewport" />
     <script type="text/javascript" src="/assets/js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="/assets/js/dr-dtime.min.js"></script>
+
+     <link class="style" href="/assets/css/style.css" rel="stylesheet" type="text/css" />
     
-    <%--<link href="assets/css/indexeef1eef1eef1eef1.css" rel="stylesheet" type="text/css" />--%>
-    <link class="style" href="/assets/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <asp:Literal runat="server" ID="ltrCodeOnBody" />
@@ -271,7 +271,7 @@
                                     <p>
                                         Đã xử lý xong thông tin. Kết quả cho tín chủ rất bất ngờ!
                                     </p>
-                                    <div class="btn_small" id="go_away" rel="assets/css/indexeef1eef1eef1eef1.css?ver=02">
+                                    <div class="btn_small" id="go_away" rel="assets/css/indexeef1eef1eef1eef1.css?ver=01">
                                         Xem ngay</div>
                                 </div>
                                 <!-- /.step_7 -->
