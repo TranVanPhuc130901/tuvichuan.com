@@ -9,32 +9,42 @@
         {
             text = new[]
             {
-                "Logo svg màu đen",
-                "Banner đầu trang chủ",
-                "Danh mục sản phẩm trang chủ",
-                "Banner giữa trang chủ",
-                "Dẫn link bài viết footer",
-                "Logo chân trang",
-                "Thẻ thanh toán",
-                "Banner trang Sản phẩm",
-                "Hình ảnh thực tế",
-                "Banner khuyến mãi đầu trang",
-                "Banner đầu trang chủ moblie"
+                //"Logo svg màu đen",
+                //"Banner đầu trang chủ",
+                "Comment khách hàng",
+                "Banner trái trang chủ",
+                "Danh sách khách hàng vừa mua hàng",
+                "Khối 1 Vật phẩm",
+                "Khối 2 vật phẩm",
+                "Khối 3 vật phẩm",
+                "Khối 4 vật phẩm",
+                "Khối 5 vật phẩm",
+                "Khối 6 vật phẩm",
+                "Khối 7 vật phẩm",
+                "Khối 8 vật phẩm",
+                "Khối 9 vật phẩm",
+                "Khối 8 vật phẩm(Đánh giá)"
+                
 
             };
             values = new[]
             {
-                "1",
-                "2",
+                //"1",
+                //"2",
                 "3",
                 "4",
                 "5",
                 "6",
                 "7",
                 "8",
-                "100",
                 "9",
-                "10"
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15"
+                
 
             };
         }

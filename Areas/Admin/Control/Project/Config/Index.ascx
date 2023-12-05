@@ -1,4 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Index.ascx.cs" Inherits="Areas_Admin_Control_Project_Config_Index" %>
+<%@ Register TagPrefix="uc1" TagName="UploadImage" Src="~/Areas/Admin/Control/Component/UploadImage.ascx" %>
+<%@ Register TagPrefix="CKEditor" Namespace="CKEditor.NET" Assembly="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999" %>
 <%@ Import Namespace="Developer.Keyword" %>
 <div id="page-content">
     <!-- Forms General Header -->
@@ -9,11 +11,37 @@
     <!-- END Forms General Header -->
     <form runat="server" class="form-horizontal">
         <div class="block row">
+            <legend>Cấu hình sản phẩm</legend>
+            <div class="form-group">
+                <label class="control-label col-md-2">Tên sản phẩm</label>
+                <div class="col-md-4">
+                    <asp:TextBox ID="txtNameProduct" class="form-control" runat="server"></asp:TextBox>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Giá sản phẩm</label>
+                <div class="col-md-4">
+                    <asp:TextBox ID="txtPrice" class="form-control" runat="server"></asp:TextBox>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Giá khuyến mãi</label>
+                <div class="col-md-4">
+                    <asp:TextBox ID="txtPriceNew" class="form-control" runat="server"></asp:TextBox>
+                </div>
+            </div>
+            <fieldset class="hdf">
+                <legend>Chi tiết sản phẩm</legend>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <CKEditor:CKEditorControl ID="txt_contentProduct" runat="server"></CKEditor:CKEditorControl>
+                    </div>
+                </div>
+            </fieldset>
             <div class="col-md-4">
                 <fieldset>
-                    <legend>Cấu hình số lượng</legend>
                     <div class="form-group">
-                        <label class="col-md-8 control-label">Số bài trên trang chính</label>
+                        <label class="col-md-8 control-label">Số bài trên trang danh mục</label>
                         <div class="col-md-4">
                             <asp:TextBox ID="txtIndex" class="form-control" runat="server" TextMode="Number"></asp:TextBox>
                         </div>

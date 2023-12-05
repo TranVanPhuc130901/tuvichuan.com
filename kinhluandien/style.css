@@ -650,6 +650,10 @@ a{text-decoration: none;}
     flex-wrap: wrap;
 }
 
+.kinh_container4-item:nth-child(3) {
+    flex-direction: row-reverse;
+}
+
 .kinh_container4-item:nth-child(2) .iLeft {
     width: 440px;
 }
@@ -1255,7 +1259,11 @@ footer .kinh-paragraph {
     opacity: 1;
 }
 .box_kinhluandien{overflow: hidden}
-
+.box_info-user{display: none; gap: 10px; margin-top: 10px; justify-content: center; background: rgba(255, 255, 255, 0.6); border-radius: 24px; padding: 10px }
+.box_info-user.active{display: flex}
+.box_info-user img{width: 50px; height: 50px; object-fit: cover; border-radius: 100%}
+.box_info-user .action p{margin: 0}
+.kinh_container1-left p{margin: 0}
 @media screen and (max-width: 1340px) {
     /*.kinh_container1 .wrp .kinh_container1-right, .kinh_container4-item:nth-child(1) .iLeft, .kinh_container9-right {
        overflow: hidden;

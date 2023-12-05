@@ -80,6 +80,7 @@ public partial class Areas_Admin_Control_Advertising_Category_AddEditCategory : 
 
             txtOrder.Text = dt.Rows[0][AdvertistmentPositionsColumns.IapSortOrder].ToString();
             txtDesc.Text = dt.Rows[0][AdvertistmentPositionsColumns.VapDescription].ToString();
+            txtParam.Text = dt.Rows[0][AdvertistmentPositionsColumns.VapParam].ToString();
             txtDate.Text = ((DateTime)dt.Rows[0][AdvertistmentPositionsColumns.DapDateCreated]).ToString("yyyy-MM-ddTHH:mm");
 
             DdlPosition.SelectedValue = dt.Rows[0][AdvertistmentPositionsColumns.IaPosition].ToString();
@@ -110,7 +111,7 @@ public partial class Areas_Admin_Control_Advertising_Category_AddEditCategory : 
         if (_insert)
         {
             var image = UploadImage.Save(false, "");
-            AdvertistmentPositions.Insert(_lang, DdlPosition.SelectedValue, txtTitle.Text, txtDesc.Text, image, status, txtOrder.Text, "", txtDate.Text.Replace("T", " "), DateTime.Now.ToString());
+            AdvertistmentPositions.Insert(_lang, DdlPosition.SelectedValue, txtTitle.Text, txtDesc.Text, image, status, txtOrder.Text, txtParam.Text, txtDate.Text.Replace("T", " "), DateTime.Now.ToString());
             #region Logs
             var logAuthor = CookieExtension.GetCookies(SecurityExtension.BuildPassword(UsersColumns.VuAccount));
             var logCreateDate = DateTime.Now.ToString();
@@ -123,7 +124,7 @@ public partial class Areas_Admin_Control_Advertising_Category_AddEditCategory : 
         else
         {
             var image = UploadImage.Save(true, "");
-            AdvertistmentPositions.Update(_lang, DdlPosition.SelectedValue, txtTitle.Text, txtDesc.Text, image, status, txtOrder.Text, "", txtDate.Text.Replace("T", " "), DateTime.Now.ToString(), _iapid);
+            AdvertistmentPositions.Update(_lang, DdlPosition.SelectedValue, txtTitle.Text, txtDesc.Text, image, status, txtOrder.Text, txtParam.Text, txtDate.Text.Replace("T", " "), DateTime.Now.ToString(), _iapid);
             #region Logs
             var logAuthor = CookieExtension.GetCookies(SecurityExtension.BuildPassword(UsersColumns.VuAccount));
             var logCreateDate = DateTime.Now.ToString();

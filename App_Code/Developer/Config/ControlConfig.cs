@@ -20,7 +20,7 @@
         public const bool ShowOurTeam = false;
         public const bool ShowPhotoAlbum = false;
         public const bool ShowProduct = true;
-        public const bool ShowProject = false;
+        public const bool ShowProject = true;
         public const bool ShowReviews = false;
         public const bool ShowRedirect = true;
         public const bool ShowService = false;

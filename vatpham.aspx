@@ -2,6 +2,16 @@
 <%@ Register Src="~/Areas/Display/DisplayLoadControl.ascx" TagPrefix="uc1" TagName="DisplayLoadControl" %>
 <%@ Register Src="~/RenderJs.ascx" TagPrefix="uc1" TagName="RenderJs" %>
 <%@ Register Src="~/RenderCss.ascx" TagPrefix="uc1" TagName="RenderCss" %>
+<%@ Register Src="~/Areas/Display/Adv/AdvUser.ascx" TagPrefix="uc1" TagName="AdvUser" %>
+<%@ Register Src="~/Areas/Display/Adv/Khoi1VatPham.ascx" TagPrefix="uc1" TagName="Khoi1VatPham" %>
+<%@ Register Src="~/Areas/Display/Adv/Khoi2VatPham.ascx" TagPrefix="uc1" TagName="Khoi2VatPham" %>
+<%@ Register Src="~/Areas/Display/Adv/Khoi3VatPham.ascx" TagPrefix="uc1" TagName="Khoi3VatPham" %>
+<%@ Register Src="~/Areas/Display/Adv/Khoi4VatPham.ascx" TagPrefix="uc1" TagName="Khoi4VatPham" %>
+<%@ Register Src="~/Areas/Display/Adv/Khoi5VatPham.ascx" TagPrefix="uc1" TagName="Khoi5VatPham" %>
+<%@ Register Src="~/Areas/Display/Adv/Khoi6VatPham.ascx" TagPrefix="uc1" TagName="Khoi6VatPham" %>
+<%@ Register Src="~/Areas/Display/Adv/Khoi7VatPham.ascx" TagPrefix="uc1" TagName="Khoi7VatPham" %>
+<%@ Register Src="~/Areas/Display/Adv/Khoi8VatPham.ascx" TagPrefix="uc1" TagName="Khoi8VatPham" %>
+<%@ Register Src="~/Areas/Display/Adv/Khoi9VatPham.ascx" TagPrefix="uc1" TagName="Khoi9VatPham" %>
 <!DOCTYPE html>
 <html lang="vi">
 <head runat="server">
@@ -18,59 +28,17 @@
     <asp:Literal runat="server" ID="ltrCodeOnBody" />
 
 <div class="box_kinhluandien">
-     <section class="kinh_container1">
+<uc1:Khoi1VatPham runat="server" ID="Khoi1VatPham"></uc1:Khoi1VatPham>
+    <%-- <section class="kinh_container1">
      <div class="wrp">
          <div class="kinh_container1-left">
-             <div class="kinh_container1-left-top">
-                 <div class="groups_image-sec1">
-                     <div class="wImage">
-                         <img src="kinhluandien/img/sec1-1.jpg" alt="img1">
-                     </div>
-                     <div class="wImage">
-                         <img src="kinhluandien/img/sec1-2.jpg" alt="img1">
-                     </div>
-                     <div class="wImage">
-                         <img src="kinhluandien/img/sec1-3.jpg" alt="img1">
-                     </div>
-                 </div>
-             </div>
-             <div class="kinh_container1-left-middle">
-                 <div class="wImage">
-                     <img src="kinhluandien/img/kinh-luan-dien-text.png" alt>
-                 </div>
-             </div>
-             <div class="kinh_container1-left-bottom">
-                 <div class="groups_image-sec1">
-                     <div class="item_bottom-sec1">
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec1-4.jpg" alt="img1">
-                         </div>
-                         <span class="text">HÓA TRỪ TAI KIẾP</span>
-                     </div>
-                     <div class="item_bottom-sec1">
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec1-5.jpg" alt="img1">
-                         </div>
-                         <span class="text">HÓA GIẢI KHỔ ĐAU</span>
-                     </div>
-                     <div class="item_bottom-sec1">
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec1-6.jpg" alt="img1">
-
-                         </div>
-                         <span class="text">CÂN BẰNG PHONG THỦY</span>
-                     </div>
-                 </div>
-             </div>
-             <%--<div class="price_sec1">GIÁ THỈNH: <span style="color: rgb(232, 227, 48); font-weight: bold;">2.200.000
-                         VNĐ</span>
-             </div>--%>
+             
              <div class="box_promotion">
                 <img src="kinhluandien/img/khuyenmai.jpg" alt="">
                 <div class="text_left">Giá bán gia lộc cho 100 người đấu tiên</div>
                 <div class="text_right">
-                    <del>5,000,000Đ</del>
-                    <span>2,200.000Đ</span>
+                    <del>999.000Đ</del>
+                    <span>390.000Đ</span>
                 </div>
             </div>
              <div class="box_btn">
@@ -83,66 +51,35 @@
              <div class="bg_image2"></div>
              <div class="bg_image3"></div>
              <div class="bg_image4"></div>
-             <div class="bg_image5"></div>
+             <div class="bg_image5">
+                 <img src="/kinhluandien/img/rua.jpg"/>
+             </div>
          </div>
      </div>
- </section>
- <section class="kinh_container2">
+ </section>--%>
+<uc1:Khoi2VatPham runat="server" ID="Khoi2VatPham"></uc1:Khoi2VatPham>
+    <uc1:Khoi3VatPham runat="server" ID="Khoi3VatPham"></uc1:Khoi3VatPham>
+    <uc1:Khoi4VatPham runat="server" ID="Khoi4VatPham"></uc1:Khoi4VatPham>
+    <uc1:Khoi5VatPham runat="server" ID="Khoi5VatPham"></uc1:Khoi5VatPham>
+    <uc1:Khoi6VatPham runat="server" ID="Khoi6VatPham"></uc1:Khoi6VatPham>
+    <uc1:Khoi7VatPham runat="server" ID="Khoi7VatPham"></uc1:Khoi7VatPham>
+    <uc1:Khoi8VatPham runat="server" ID="Khoi8VatPham"></uc1:Khoi8VatPham>
+    <uc1:Khoi9VatPham runat="server" ID="Khoi9VatPham"></uc1:Khoi9VatPham>
+<%-- <section class="kinh_container2">
      <div class="wrp">
          <div class="kinh_container2-title kinh_title">
              <div class="kinh_container2-title-top kinh_title-top">THÔNG TIN CHI TIẾT VỀ SẢN PHẨM</div>
              <div class="kinh_container2-title-bottom kinh_title-bottom">KINH LUÂN ĐIỆN</div>
-             <div class="line_title"></div>m
+             <div class="line_title"></div>
          </div>
          <div class="kinh_container2-box">
              <div class="kinh_container2-left">
                  <div class="carousel">
                      <div class="main-image owl-carousel">
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec2-1.jpg" alt="Large Image">
-                         </div>
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec2-2.jpg" alt="Large Image">
-                         </div>
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec2-3.jpg" alt="Large Image">
-                         </div>
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec2-4.jpg" alt="Large Image">
-                         </div>
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec2-5.jpg" alt="Large Image">
-                         </div>
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec2-6.jpg" alt="Large Image">
-                         </div>
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec2-7.jpg" alt="Large Image">
-                         </div>
+                         <uc1:Khoi2VatPham runat="server" ID="Khoi2VatPham1"></uc1:Khoi2VatPham>
                      </div>
                      <div class="thumbnail-images owl-carousel">
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec2-1.jpg" alt="Image 1">
-                         </div>
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec2-2.jpg" alt="Image 2">
-                         </div>
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec2-3.jpg" alt="Image 3">
-                         </div>
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec2-4.jpg" alt="Image 1">
-                         </div>
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec2-5.jpg" alt="Image 2">
-                         </div>
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec2-6.jpg" alt="Image 3">
-                         </div>
-                         <div class="wImage">
-                             <img src="kinhluandien/img/sec2-7.jpg" alt="Image 3">
-                         </div>
-                         <!-- Add more thumbnail images as needed -->
+                         <uc1:Khoi2VatPham runat="server" ID="Khoi2VatPham2"></uc1:Khoi2VatPham>
                      </div>
                  </div>
              </div>
@@ -167,8 +104,8 @@
              </div>
          </div>
      </div>
- </section>
- <section class="kinh_container3">
+ </section>--%>
+ <%--<section class="kinh_container3">
      <div class="wrp">
          <div class="kinh_container3-title kinh_title">
              <div class="kinh_container3-title-top kinh_title-top">CAM KẾT CỦA CHÚNG TÔI</div>
@@ -199,13 +136,13 @@
              </div>
              <div class="kinh_container3-right">
                  <div class="wImage">
-                     <img src="kinhluandien/img/SEC3.jpg" alt="">
+                     <img src="kinhluandien/img/rua.jpg" alt="">
                  </div>
              </div>
          </div>
      </div>
- </section>
- <section class="kinh_container4">
+ </section>--%>
+<%-- <section class="kinh_container4">
      <div class="wrp">
          <div class="box_title-kinh4">
              <div class="kinh_container4-title kinh_title">
@@ -218,7 +155,9 @@
              <div class="kinh_container4-item">
                  <div class="iLeft">
                      <div class="bg_1"></div>
-                     <div class="bg_2"></div>
+                     <div class="bg_2">
+                         <img src="/kinhluandien/img/rua.jpg"/>
+                     </div>
                      <div class="bg_3"></div>
                      <div class="bg_4"></div>
                      <div class="bg_5"></div>
@@ -265,9 +204,8 @@
          </div>
      </div>
 
-<%--     </div>--%>
- </section>
- <section class="kinh_container5">
+ </section>--%>
+ <%--<section class="kinh_container5">
      <div class="wrp">
          <div class="kinh_container5-title kinh_title">
              <div class="kinh_container5-title-top kinh_title-top">NHỮNG LỢI ÍCH</div>
@@ -294,12 +232,14 @@
              </div>
              <div class="kinh_container5-right">
                  <div class="bg_1"></div>
-                 <div class="bg_2"></div>
+                 <div class="bg_2">
+                     <img src="/kinhluandien/img/rua.jpg"/>
+                 </div>
              </div>
          </div>
      </div>
- </section>
- <section class="kinh_container6">
+ </section>--%>
+ <%--<section class="kinh_container6">
      <div class="wrp">
          <div class="kinh_container6-title kinh_title">
              <div class="kinh_container6-title-top kinh_title-top">NGUỒN GỐC CỦA PHÁP BẢO</div>
@@ -320,8 +260,8 @@
              </div>
          </div>
      </div>
- </section>
- <section class="kinh_container7">
+ </section>--%>
+ <%--<section class="kinh_container7">
      <div class="wrp">
          <div class="kinh_container7-title kinh_title">
              <div class="kinh_container7-title-top kinh_title-top">BẠN NHẬN ĐƯỢC GÌ KHI QUAY KINH LUÂN THEO</div>
@@ -366,8 +306,8 @@
              </div>
          </div>
      </div>
- </section>
- <section class="kinh_container8">
+ </section>--%>
+ <%--<section class="kinh_container8">
      <div class="wrp">
          <div class="kinh_container8-title kinh_title">
              <div class="kinh_container8-title-top kinh_title-top">BẠN NHẬN ĐƯỢC GÌ KHI QUAY KINH LUÂN THEO</div>
@@ -434,8 +374,8 @@
              </div>
          </div>
      </div>
- </section>
- <section class="kinh_container9" id="kinh_container9">
+ </section>--%>
+ <%--<section class="kinh_container9" id="kinh_container9">
      <div class="wrp">
          <div class="kinh_container9-title kinh_title">
              <div class="kinh_container9-title-top kinh_title-top">KINH LUÂN ĐIỆN - PHÁP BẢO <br> TỊNH HÓA NGHIỆP CHƯỚNG </div>
@@ -448,8 +388,8 @@
                      <img src="kinhluandien/img/khuyenmai.jpg" alt="">
                      <div class="text_left">Giá bán gia lộc cho 100 người đấu tiên</div>
                      <div class="text_right">
-                         <del>5,000,000Đ</del>
-                         <span>2,200.000Đ</span>
+                         <del>999.000Đ</del>
+                         <span>390.000Đ</span>
                      </div>
                  </div>
                  <div class="box_coundown"> Chỉ còn:
@@ -478,17 +418,20 @@
                          <button class="btnSubmit" type="submit">ĐẶT THỈNH NGAY</button>
                      </div>
                  </form>
+                 <uc1:AdvUser runat="server" ID="AdvUser"/>
              </div>
              <div class="kinh_container9-right">
                  <div class="bg_1"></div>
-                 <div class="bg_2"></div>
+                 <div class="bg_2">
+                     <img src="/kinhluandien/img/rua.jpg"/>
+                 </div>
                  <div class="bg_3"></div>
                  <div class="bg_4"></div>
                  <div class="bg_5"></div>
              </div>
          </div>
      </div>
- </section>
+ </section>--%>
  <footer>
      <div class="wrp">
          <div class="kinh_footer-container">
@@ -541,6 +484,7 @@
                      <button class="btnSubmit" type="submit">TÔI MUỐN THỈNH NGAY ĐỂ CHIÊU TÀI LỘC VỀ</button>
                  </div>
              </form>
+             <uc1:AdvUser runat="server" ID="AdvUser"/>
          </div>
      </div>
  </div>

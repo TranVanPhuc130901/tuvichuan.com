@@ -36,31 +36,26 @@
                             <asp:TextBox runat="server" ID="txtDesc" TextMode="MultiLine" CssClass="form-control" Rows="3"></asp:TextBox>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2">Kiểu hiển thị <span></span></label>
+                    <div class="col-md-4">
+                        <asp:DropDownList runat="server" ID="ddlType" CssClass="form-control select-chosen">
+                            <asp:ListItem Text="Khối sản phẩm 1" Value="1" />
+                            <asp:ListItem Text="Khối sản phẩm 2" Value="2" />
+                            <asp:ListItem Text="Khối sản phẩm 3" Value="3" />
+                            <asp:ListItem Text="Khối sản phẩm 4" Value="4" />
+                            <asp:ListItem Text="Khối sản phẩm 5" Value="5" />
+                            <asp:ListItem Text="Khối sản phẩm 6" Value="6" />
+                            <asp:ListItem Text="Khối sản phẩm 7" Value="7" />
+                            <asp:ListItem Text="Khối sản phẩm 8" Value="8" />
+                            <asp:ListItem Text="Khối sản phẩm 9" Value="9" />
+                        </asp:DropDownList>
+                        </div>
+                    </div>
                     <uc1:UploadImage runat="server" id="UploadImage" />
-                    <div class="form-group count-this">
-                        <label class="control-label col-md-2">Địa chỉ</label>
-                        <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="txtLocation" CssClass="form-control"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group count-this">
-                        <label class="control-label col-md-2">Chủ đầu tư</label>
-                        <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group count-this">
-                        <label class="control-label col-md-2">Thời gian thi công</label>
-                        <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="TextBox2" CssClass="form-control"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group count-this">
-                        <label class="control-label col-md-2">Diện tích sàn gỗ</label>
-                        <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="TextBox3" CssClass="form-control"></asp:TextBox>
-                        </div>
-                    </div>
+                    <uc1:UploadImage runat="server" id="UploadImage1" />
+                    <uc1:UploadImage runat="server" id="UploadImage2" />
+                    
                     <div class="form-group">
                         <label class="control-label col-md-2">Ngày đăng</label>
                         <div class="col-md-3">

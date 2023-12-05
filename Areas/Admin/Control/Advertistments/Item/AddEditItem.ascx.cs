@@ -89,6 +89,7 @@ public partial class Areas_Admin_Control_Advertising_Item_AddEditItem : UserCont
             UploadImage.Load(dt.Rows[0][AdvertistmentsColumns.VaImage].ToString());
             txt_content.Text = dt.Rows[0][AdvertistmentsColumns.VaParam].ToString();
             txtOrder.Text = dt.Rows[0][AdvertistmentsColumns.IaSortOrder].ToString();
+            HdOldContent.Value = dt.Rows[0][AdvertistmentsColumns.VaParam].ToString();
             txtDesc.Text = dt.Rows[0][AdvertistmentsColumns.VaDescription].ToString();
             txtDate.Text = ((DateTime)dt.Rows[0][AdvertistmentsColumns.DaDateCreated]).ToString("yyyy-MM-ddTHH:mm");
 
@@ -118,16 +119,17 @@ public partial class Areas_Admin_Control_Advertising_Item_AddEditItem : UserCont
 
     protected void btSubmit_OnClick(object sender, EventArgs e)
     {
+        var contentDetail = ContentExtendtions.ProcessStringContent(txt_content.Text, HdOldContent.Value, _pic);
         #region Status
         var status = "0";
         if (cbStatus.Checked) status = "1";
         #endregion
-
+        
         #region Insert
         if (_insert)
         {
             var image = UploadImage.Save(false, "");
-            Advertistments.Insert(ddlCategory.SelectedValue, _lang, txtTitle.Text, txtLink.Text, ddlOpenOption.SelectedValue, txtDesc.Text, image, txtDate.Text.Replace("T", " "), DateTime.Now.ToString(), txt_content.Text, txtOrder.Text, status);
+            Advertistments.Insert(ddlCategory.SelectedValue, _lang, txtTitle.Text, txtLink.Text, ddlOpenOption.SelectedValue, txtDesc.Text, image, txtDate.Text.Replace("T", " "), DateTime.Now.ToString(), contentDetail, txtOrder.Text, status);
             #region Logs
             var logAuthor = CookieExtension.GetCookies(SecurityExtension.BuildPassword(UsersColumns.VuAccount));
             var logCreateDate = DateTime.Now.ToString();
@@ -140,7 +142,7 @@ public partial class Areas_Admin_Control_Advertising_Item_AddEditItem : UserCont
         else
         {
             var image = UploadImage.Save(true, "");
-            Advertistments.Update(ddlCategory.SelectedValue, _lang, txtTitle.Text, txtLink.Text, ddlOpenOption.SelectedValue, txtDesc.Text, image, txtDate.Text.Replace("T", " "), DateTime.Now.ToString(), txt_content.Text, txtOrder.Text, status, _iaid);
+            Advertistments.Update(ddlCategory.SelectedValue, _lang, txtTitle.Text, txtLink.Text, ddlOpenOption.SelectedValue, txtDesc.Text, image, txtDate.Text.Replace("T", " "), DateTime.Now.ToString(), contentDetail, txtOrder.Text, status, _iaid);
             #region Logs
             var logAuthor = CookieExtension.GetCookies(SecurityExtension.BuildPassword(UsersColumns.VuAccount));
             var logCreateDate = DateTime.Now.ToString();

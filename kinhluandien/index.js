@@ -109,7 +109,35 @@ $(document).ready(function () {
         $(".popup_submitForm").removeClass("active");
       });
 
+      const itemsSec9 = $('.kinh_container9-left .box_info-user');
+      const itemPopup = $('.popup_submitForm .box_info-user');
+      let currentIndexSec9 = 0;
+      let currentIndexPopup = 0;
 
+      function displayItemsSec9() {
+          itemsSec9.eq(currentIndexSec9).addClass('active');
+
+          setTimeout(() => {
+              itemsSec9.eq(currentIndexSec9).removeClass('active');
+
+              currentIndexSec9 = (currentIndexSec9 + 1) % itemsSec9.length;
+              displayItemsSec9();
+          }, 3000);
+      }
+
+      function displayItemsPopup() {
+          itemPopup.eq(currentIndexPopup).addClass('active');
+
+          setTimeout(() => {
+              itemPopup.eq(currentIndexPopup).removeClass('active');
+
+              currentIndexPopup = (currentIndexPopup + 1) % itemPopup.length;
+              displayItemsPopup();
+          }, 3000);
+      }
+
+      displayItemsSec9();
+      displayItemsPopup();
      
 });
 

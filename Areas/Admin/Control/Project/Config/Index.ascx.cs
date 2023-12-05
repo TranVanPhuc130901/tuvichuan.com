@@ -8,14 +8,22 @@ using RevosJsc.Extension;
 
 public partial class Areas_Admin_Control_Project_Config_Index : UserControl
 {
+    private readonly string _app = CodeApplications.Project;
+    private readonly string _pic = FolderPic.Project;
     private readonly string _lang = RevosJsc.LanguageControl.Cookie.GetLanguageValueAdmin();
     protected void Page_Load(object sender, EventArgs e)
     {
         GetSettingKey();
+
     }
 
     private void GetSettingKey()
     {
+        txtNameProduct.Text = SettingsExtension.GetSettingKey("TenSanPham", _lang);
+        txt_contentProduct.Text = SettingsExtension.GetSettingKey("MoTaSanPham", _lang);
+        txtPrice.Text = SettingsExtension.GetSettingKey("GiaSanPham", _lang);
+        txtPriceNew.Text = SettingsExtension.GetSettingKey("GiaKhuyenMai", _lang);
+
         txtIndex.Text = SettingsExtension.GetSettingKey(SettingKey.SoProjectTrenTrangChu, _lang);
         txtCategory.Text = SettingsExtension.GetSettingKey(SettingKey.SoProjectTrenTrangDanhMuc, _lang);
         txtOther.Text = SettingsExtension.GetSettingKey(SettingKey.SoProjectKhacTrenMotTrang, _lang);
@@ -35,6 +43,12 @@ public partial class Areas_Admin_Control_Project_Config_Index : UserControl
 
     protected void btSubmit_OnClick(object sender, EventArgs e)
     {
+
+        SettingsExtension.SetOtherSettingKey("TenSanPham", txtNameProduct.Text, _lang);
+        SettingsExtension.SetOtherSettingKey("MoTaSanPham", txt_contentProduct.Text, _lang);
+        SettingsExtension.SetOtherSettingKey("GiaSanPham", txtPrice.Text, _lang);
+        SettingsExtension.SetOtherSettingKey("GiaKhuyenMai", txtPriceNew.Text, _lang);
+
         SettingsExtension.SetOtherSettingKey(SettingKey.SoProjectTrenTrangChu, txtIndex.Text, _lang);
         SettingsExtension.SetOtherSettingKey(SettingKey.SoProjectTrenTrangDanhMuc, txtCategory.Text, _lang);
         SettingsExtension.SetOtherSettingKey(SettingKey.SoProjectKhacTrenMotTrang, txtOther.Text, _lang);

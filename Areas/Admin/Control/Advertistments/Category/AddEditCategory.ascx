@@ -36,6 +36,12 @@
                         </div>
                     </div>
                     <uc1:UploadImage runat="server" id="UploadImage" />
+                    <div class="form-group count-this">
+                        <label class="control-label col-md-2">Mô tả thêm(nếu có) <span></span></label>
+                        <div class="col-md-10">
+                            <asp:TextBox runat="server" ID="txtParam" TextMode="MultiLine" CssClass="form-control" Rows="3"></asp:TextBox>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label class="control-label col-md-2">Ngày đăng</label>
                         <div class="col-md-3">

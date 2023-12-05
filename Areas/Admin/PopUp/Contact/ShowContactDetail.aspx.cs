@@ -166,9 +166,9 @@ public partial class Areas_Admin_PopUp_Contact_ShowContactDetail : System.Web.UI
 <table>
     <tbody>
         <tr><td>Họ tên</td><td>" + dt.Rows[0]["vcdName"] + @"</td></tr>
-        <tr><td>Email</td><td>" + dt.Rows[0]["vcdEmail"] + @"</td></tr>
+        <tr><td>Email</td><td>" + dt.Rows[0]["vcdContent"] + @"</td></tr>
         <tr><td>Điện thoại</td><td>" + dt.Rows[0]["vcdPhone"] + @"</td></tr>
-        <tr><td>Nội dung</td><td>" + dt.Rows[0]["vcdContent"].ToString().Replace("\n", "</br>") + @"</td></tr>
+        <tr><td>Địa chỉ</td><td>" + dt.Rows[0]["vcdAddress"].ToString().Replace("\n", "</br>") + @"</td></tr>
         <tr><td>Source</td><td>" + StringExtension.LayChuoi(param, "", 1) + @"</td></tr>
         <tr><td>utm_source</td><td>" + StringExtension.LayChuoi(param, "", 2) + @"</td></tr>
         <tr><td>utm_medium</td><td>" + StringExtension.LayChuoi(param, "", 3) + @"</td></tr>

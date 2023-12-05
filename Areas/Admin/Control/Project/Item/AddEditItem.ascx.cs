@@ -34,6 +34,14 @@ public partial class Areas_Admin_Control_Project_Item_AddEditItem : UserControl
         UploadImage.LayAnhTuNoiDung = true;
         //UploadImage.TaoAnhNho = false;
         //UploadImage.HanCheKichThuoc = false;
+        UploadImage1.Control = _app;
+        UploadImage1.Pic = _pic;
+        UploadImage1.Text = "Ảnh đại diện";
+        UploadImage1.LayAnhTuNoiDung = true;
+        UploadImage2.Control = _app;
+        UploadImage2.Pic = _pic;
+        UploadImage2.Text = "Ảnh đại diện";
+        UploadImage2.LayAnhTuNoiDung = true;
         #endregion
 
         #region Gán đường dẫn cho ckeditor
@@ -95,10 +103,10 @@ public partial class Areas_Admin_Control_Project_Item_AddEditItem : UserControl
             txt_content.Text = dt.Rows[0][ItemsColumns.ViContent].ToString();
             HdOldContent.Value = dt.Rows[0][ItemsColumns.ViContent].ToString();
             HdTotalView.Value = dt.Rows[0][ItemsColumns.IiTotalView].ToString();
-            txtLocation.Text = StringExtension.LayChuoi(dt.Rows[0][ItemsColumns.ViParam].ToString(), "", 1);
-            TextBox1.Text = StringExtension.LayChuoi(dt.Rows[0][ItemsColumns.ViParam].ToString(), "", 2);
-            TextBox2.Text = StringExtension.LayChuoi(dt.Rows[0][ItemsColumns.ViParam].ToString(), "", 3);
-            TextBox3.Text = StringExtension.LayChuoi(dt.Rows[0][ItemsColumns.ViParam].ToString(), "", 4);
+            //txtLocation.Text = StringExtension.LayChuoi(dt.Rows[0][ItemsColumns.ViParam].ToString(), "", 1);
+            //TextBox1.Text = StringExtension.LayChuoi(dt.Rows[0][ItemsColumns.ViParam].ToString(), "", 2);
+            //TextBox2.Text = StringExtension.LayChuoi(dt.Rows[0][ItemsColumns.ViParam].ToString(), "", 3);
+            //TextBox3.Text = StringExtension.LayChuoi(dt.Rows[0][ItemsColumns.ViParam].ToString(), "", 4);
 
             #region SEO
             txtUrl.Text = dt.Rows[0][ItemsColumns.ViLink].ToString();
@@ -128,7 +136,7 @@ public partial class Areas_Admin_Control_Project_Item_AddEditItem : UserControl
     protected void btSubmit_OnClick(object sender, EventArgs e)
     {
         var contentDetail = ContentExtendtions.ProcessStringContent(txt_content.Text, HdOldContent.Value, _pic);
-        var param = StringExtension.GhepChuoi("", txtLocation.Text, TextBox1.Text, TextBox2.Text, TextBox3.Text);
+        //var param = StringExtension.GhepChuoi("", txtLocation.Text, TextBox1.Text, TextBox2.Text, TextBox3.Text);
 
         #region Status
         var status = "0";
@@ -159,7 +167,7 @@ public partial class Areas_Admin_Control_Project_Item_AddEditItem : UserControl
         if (_insert)
         {
             var image = UploadImage.Save(false, contentDetail);
-            GroupItems.InsertItemGroupItem(_lang, _app, "", txtTitle.Text, txtDesc.Text, contentDetail, image, "", txtMetaTitle.Text, txtMetaKeyword.Text, txtMetaDescription.Text, txtTag.Text, StringExtension.ReplateTitle(txtUrl.Text), "0", "0", param, "0", txtOrder.Text, txtDate.Text.Replace("T", " "), DateTime.Now.ToString(), status, ddlCategory.SelectedValue, DateTime.Now.ToString(), DateTime.Now.ToString());
+            GroupItems.InsertItemGroupItem(_lang, _app, "", txtTitle.Text, txtDesc.Text, contentDetail, image, "", txtMetaTitle.Text, txtMetaKeyword.Text, txtMetaDescription.Text, txtTag.Text, StringExtension.ReplateTitle(txtUrl.Text), "0", "0", "", "0", txtOrder.Text, txtDate.Text.Replace("T", " "), DateTime.Now.ToString(), status, ddlCategory.SelectedValue, DateTime.Now.ToString(), DateTime.Now.ToString());
             #region Logs
             var logAuthor = CookieExtension.GetCookies(SecurityExtension.BuildPassword(UsersColumns.VuAccount));
             var logCreateDate = DateTime.Now.ToString();
@@ -172,7 +180,7 @@ public partial class Areas_Admin_Control_Project_Item_AddEditItem : UserControl
         else
         {
             var image = UploadImage.Save(true, contentDetail);
-            GroupItems.UpdateItemGroupItem(_lang, _app, "", txtTitle.Text, txtDesc.Text, contentDetail, image, "", txtMetaTitle.Text, txtMetaKeyword.Text, txtMetaDescription.Text, txtTag.Text, StringExtension.ReplateTitle(txtUrl.Text), "0", "0", param, HdTotalView.Value, txtOrder.Text, txtDate.Text.Replace("T", " "), DateTime.Now.ToString(), status, ddlCategory.SelectedValue, DateTime.Now.ToString(), DateTime.Now.ToString(), _iiid, HdOldIgId.Value);
+            GroupItems.UpdateItemGroupItem(_lang, _app, "", txtTitle.Text, txtDesc.Text, contentDetail, image, "", txtMetaTitle.Text, txtMetaKeyword.Text, txtMetaDescription.Text, txtTag.Text, StringExtension.ReplateTitle(txtUrl.Text), "0", "0", "", HdTotalView.Value, txtOrder.Text, txtDate.Text.Replace("T", " "), DateTime.Now.ToString(), status, ddlCategory.SelectedValue, DateTime.Now.ToString(), DateTime.Now.ToString(), _iiid, HdOldIgId.Value);
             #region Logs
             var logAuthor = CookieExtension.GetCookies(SecurityExtension.BuildPassword(UsersColumns.VuAccount));
             var logCreateDate = DateTime.Now.ToString();

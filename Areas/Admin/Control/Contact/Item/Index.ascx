@@ -15,6 +15,7 @@
     <form runat="server" class="block full">
         <div class="block-title pt10 pb10 pl20 pr20">
             <a class="text-danger" href="javascript:DeleteListContactDetail();"><i class="fa fa-trash-o"></i> Xóa các mục đang chọn</a>
+            <asp:LinkButton id="lbt_export" CssClass="text-success" runat="server" OnClick="lbt_export_OnClick"><i class="fa fa-file-excel-o"></i> Export Excel</asp:LinkButton>
         </div>
         <div class="row">
             <div class="form-group col-md-4">

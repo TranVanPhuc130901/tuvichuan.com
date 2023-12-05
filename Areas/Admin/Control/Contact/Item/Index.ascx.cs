@@ -7,6 +7,7 @@ using RevosJsc.Columns;
 using RevosJsc.Database;
 using RevosJsc.Extension;
 using RevosJsc.TSql;
+using Spire.Xls;
 
 public partial class Areas_Admin_Control_Contact_Item_Index : System.Web.UI.UserControl
 {
@@ -67,7 +68,7 @@ public partial class Areas_Admin_Control_Contact_Item_Index : System.Web.UI.User
             s.Append("<div class=\"cot1 text-center\"><input class='cursor-pointer' id='cb-" + id + "' name='tick' type='checkbox' value='" + id + "' /></div>");
             s.Append("<div class=\"cot2\">");
             s.Append("<b>Họ tên</b>: " + dt.Rows[i]["vcdName"] + "<br/>");
-            s.Append("<b>Email</b>: " + dt.Rows[i]["vcdEmail"] + "<br/>");
+            s.Append("<b>Email</b>: " + dt.Rows[i]["vcdContent"] + "<br/>");
             s.Append("<b>Điện thoại</b>: " + dt.Rows[i]["vcdPhone"] + "<br/>");
             s.Append("<b>Địa chỉ</b>: " + dt.Rows[i]["vcdAddress"] + "<br/>");
             s.Append("</div>");
@@ -126,5 +127,58 @@ public partial class Areas_Admin_Control_Contact_Item_Index : System.Web.UI.User
         if (subject.Equals("Contact2")) return "Yêu cầu tư vấn tour";
         if (subject.Equals("RequestQuote")) return "Yêu cầu báo giá";
         return "Liên hệ - Góp ý";
+    }
+
+    protected void lbt_export_OnClick(object sender, EventArgs e)
+    {
+        var workbook = new Workbook();
+        var sheet = workbook.Worksheets[0];
+        sheet.Range["E1"].Text = "Danh sách liên hệ";
+        sheet.Range["E1"].Style.Font.IsBold = true;
+        sheet.Range["E1"].Style.Font.Size = 20;
+
+        sheet.Range["E2"].Style.Font.IsBold = true;
+        sheet.Range["E2"].Style.Font.Size = 16;
+        sheet.Range["E2"].Style.Font.IsItalic = true;
+        sheet.Range["E2"].Text = "Ngày xuất: " + DateTime.Now.ToString("dd-MM-yyyy HH:mm");
+
+        sheet.Range["A5"].Style.Font.IsBold = true;
+        sheet.Range["B5"].Style.Font.IsBold = true;
+        sheet.Range["C5"].Style.Font.IsBold = true;
+        sheet.Range["D5"].Style.Font.IsBold = true;
+        sheet.Range["E5"].Style.Font.IsBold = true;
+
+        sheet.SetColumnWidth(1, 30);
+        sheet.SetColumnWidth(2, 30);
+        sheet.SetColumnWidth(3, 30);
+        sheet.SetColumnWidth(4, 30);
+        sheet.SetColumnWidth(5, 40);
+        sheet.SetColumnWidth(6, 30);
+
+        // Căn giữa chữ trong cột F
+        sheet.Range["A5:A10000"].Style.HorizontalAlignment = HorizontalAlignType.Center;
+        sheet.Range["B5:B10000"].Style.HorizontalAlignment = HorizontalAlignType.Center;
+        sheet.Range["C5:C10000"].Style.HorizontalAlignment = HorizontalAlignType.Center;
+        sheet.Range["D5:D10000"].Style.HorizontalAlignment = HorizontalAlignType.Center;
+        sheet.Range["E5:E10000"].Style.HorizontalAlignment = HorizontalAlignType.Center;
+
+
+        var fields = DataExtension.GetListColumns(
+             "ContactDetails.vcdName AS [Tên]", "ContactDetails.vcdPhone AS [Số điện thoại]", "ContactDetails.vcdAddress AS [Địa chỉ]", "ContactDetails.vcdContent AS [Ngày sinh]", "ContactDetails.dcdDateCreated AS [Ngày nhận thông báo]"
+            );
+
+        var dt = ContactDetails.GetData("", fields, "", "ContactDetails.dcdDateCreated" + " desc");
+        if (dt.Rows.Count > 0)
+        {
+            sheet.InsertDataTable(dt, true, 5, 1);
+            var path = Request.PhysicalApplicationPath + "/";
+            var strFileName = path + "Export_Contact.xlsx";
+            workbook.SaveToFile(strFileName, ExcelVersion.Version2013);
+            Response.Redirect(UrlExtension.WebsiteUrl + strFileName.Replace(path, ""));
+        }
+        else
+        {
+
+        }
     }
 }
